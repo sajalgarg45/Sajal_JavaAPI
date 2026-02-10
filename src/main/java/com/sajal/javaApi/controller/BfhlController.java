@@ -3,13 +3,15 @@ package com.sajal.javaApi.controller;
 import com.sajal.javaApi.dto.ApiResponse;
 import com.sajal.javaApi.dto.BfhlRequest;
 import com.sajal.javaApi.service.BfhlService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BfhlController {
 
-    private static final String EMAIL = "your_chitkara_email@chitkara.edu.in";
+    @Value("${official.email}")
+    private String email;
 
     private final BfhlService bfhlService;
 
@@ -20,7 +22,7 @@ public class BfhlController {
     @GetMapping("/health")
     public ResponseEntity<ApiResponse<Void>> health() {
         return ResponseEntity.ok(
-                new ApiResponse<>(true, EMAIL, null)
+                new ApiResponse<>(true, email, null)
         );
     }
 
@@ -28,7 +30,7 @@ public class BfhlController {
     public ResponseEntity<ApiResponse<?>> bfhl(@RequestBody BfhlRequest request) {
         Object result = bfhlService.process(request);
         return ResponseEntity.ok(
-                new ApiResponse<>(true, EMAIL, result)
+                new ApiResponse<>(true, email, result)
         );
     }
 }
