@@ -63,11 +63,11 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
+	<dependency>
+		<groupId>me.paulschwarz</groupId>
+		<artifactId>spring-dotenv</artifactId>
+		<version>4.0.0</version>
+	</dependency>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
