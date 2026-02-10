@@ -1,5 +1,10 @@
 package com.sajal.javaApi.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({ "is_success", "official_email", "data", "error" })
 public class ApiResponse<T> {
 
     private boolean is_success;
