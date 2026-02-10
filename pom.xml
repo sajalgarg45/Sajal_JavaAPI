@@ -68,6 +68,11 @@
 		<artifactId>spring-dotenv</artifactId>
 		<version>4.0.0</version>
 	</dependency>
+</dependencies>
+
+<build>
+	<plugins>
+		<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
